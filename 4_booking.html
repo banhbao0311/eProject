@@ -1,0 +1,47 @@
+<div id="background">
+<div class="booking"></div>
+    <div id="formBooking" ng-controller="bookingCtrl">
+      <h2>Your Booking</h2>
+      <form name="formBooking" novalidate ng-submit="submitBK()">
+        <div>
+          <label for="" class="labelForm">First Name</label>
+          <input type="text" name="firstName" id="" required ng-model="firstName" />
+          <div style="color: red;" ng-show="formBooking.firstName.$error.required">* First Name cannot be blank</div>
+      </div>
+      <div>
+        <label for="" class="labelForm">Last Name</label>
+        <input type="text" name="lastName" id="" required ng-model="lastName"/>
+        <div style="color: red;" ng-show="formBooking.lastName.$error.required">* Last Name cannot be blank</div>
+      </div>
+      <div>
+        <label for="" class="labelForm">Adult</label>
+        <input type="number" name="aldultQnt" id="" min="0" ng-model="aldultQnt" />
+      </div>
+      <div>
+        <label for="" class="labelForm">Children</label>
+        <input type="number" name="childQnt" id="" min="0" ng-model="childQnt" />
+      </div>
+      <div>
+        <label for="" class="labelForm">Ticket Type</label>
+        <input type="radio" name="ticketType" id="" ng-checked="true" ng-click="ticketType = 0" />Basic
+        <input type="radio" name="ticketType" id=""  ng-click="ticketType = 30"/>Silver
+        <input type="radio" name="ticketType" id="" ng-click="ticketType = 50" />Gold
+      </div>
+      <div>
+        <label for="" class="labelForm">Telephone</label>
+        <input type="text" ng-pattern="/^\+\d{2}\s\d{1,9}$/" ng-model="telephone" name="telephone" required>
+        <div style="color: red;" ng-show="formBooking.telephone.$error.required">* Telephone cannot be blank</div>
+        <div style="color: red;" ng-show="formBooking.telephone.$error.pattern || formBooking.telephone.$error.required">* Format +xx xxxxxxxxx x:digit</div>
+      </div>
+      <div>
+        <label for="" class="labelForm">Total</label>
+        <!-- <input type="text" name="total" id="" readonly ng-model="total"> -->
+        <span name="total" id="totalTicket" ng-model="total">{{aldultQnt*40 +childQnt*20 + ticketType| currency}}</span>
+      </div>
+      <div>
+        <input type="submit" name="" id="button" class="btn btn-success" ng-disabled="formBooking.$invalid"/>
+        <input type="reset" id="button"  value="Reset" class="btn btn-light"/>
+      </div>
+      </form> 
+    </div>
+  </div>

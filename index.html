@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Aquarium</title>
+    <script src=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Css/home.css">
+</head>
+<header>
+    <div>
+        <div class="navbar navbar-expand-lg bd-navbar navbar-dark bg-dark fixed-top"> 
+            <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+                <a class="navbar-brand" href="#">
+                    <img src="Pictures/logofish.svg" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                  
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#/!"><b>HOME</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!gallery"><b>GALLERY</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!event"><b>EVENT</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!booking"><b>BOOKING</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!feedback"><b>FEEDBACK</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!contact"><b>CONTACT US</b></a>
+                        </li>
+                    </ul>
+                    <!-- <div class="btn-group" role="group" aria-label="Basic example" ng-controller="homectrol"> -->
+                        <!-- <input type="search" ng-model="id" placeholder="Search Enter">                             -->
+                        <!-- <button class="btn btn-primary"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button> -->
+                        <!-- <i class="fa-regular fa-hand-back-point-right fa-shake fa-2xl" style="color: #f0660a;"></i> -->
+                    <!-- </div> -->
+                </div>
+            </nav> 
+        </div>
+    </div>
+</header>
+<body ng-app="myApp" class="view">
+
+    <div ng-view></div>
+    <footer class="container mt-5 " ng-controller="footerCrol">
+        <div class="row">
+            <hr>
+            <div class="col-sm-4">
+                <h3>Introduce</h3>
+                <p>Nexus Aquarium is one of the world's leading aquariums, providing customers with a memorable experience of life beneath the ocean. With a vast area and stunning design, we take you on an incredible journey through diverse and abundant fish tanks, creating a natural habitat for thousands of marine species.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Information</h3>
+                <ul>
+                    <li class="col-sm-4">
+                        <a href="#!event" class="nav-link"><b>Event</b></a>
+                    </li>
+                    <li class="col-sm-4">
+                        <a href="#!booking" class="nav-link"><b>Booking</b></a>
+                    </li>
+                    <li class="col-sm-4">
+                        <a href="#!contact" class="nav-link"><b>Contact</b></a>
+                    </li>
+                </ul>
+                <p>Now time: {{currentTime | date:'dd/MM/yyyy HH:mm:ss'}}</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Aquarium Nexus</h3>
+                <img src="Pictures/logofish.svg" alt="">
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="index.js"></script>
+</html>
